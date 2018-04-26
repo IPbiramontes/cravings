@@ -1,0 +1,21 @@
+.card-img-top{
+    width:25%;
+    height:20%;
+    
+}
+
+.icon-bar{
+    background-color: black;
+}
+
+.lightOrange{
+    background-color: #ffbc51;
+}
+
+.darkRed{
+    background-color: #d64c31;
+}
+
+.nav-font {
+    font-family: 'Gaegu', cursive;
+}
