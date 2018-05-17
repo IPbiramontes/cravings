@@ -8,14 +8,34 @@
     background-color: black;
 }
 
-.lightOrange{
-    background-color: #ffbc51;
+.light{
+    background-color: white;
+    color: black;
 }
 
-.darkRed{
-    background-color: #d64c31;
+.dark{
+    background-color: black;
+    color: white;
 }
 
 .nav-font {
-    font-family: 'Gaegu', cursive;
+    font-family: 'Bree Serif', serif;
+}
+
+#logo {
+    text-align: center;
+    
+}
+#cssSearchBar{
+    width:90%;
+    text-align: center;
+    border: black solid 2px;
+}
+#cssButton{
+    width:5%; 
+    height:25px;
+    text-align: center;
+    background-color:black;
+    border-radius:100%;
+    
 }
