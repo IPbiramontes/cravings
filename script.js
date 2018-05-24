@@ -4,7 +4,11 @@ $(document).ready(function(){
             $("#OurNav").html(data);
     });
     $("#cssButton").click(function() {
-        alert( "Handler for .click() called." );
+        var userSearch = $("input").val();
+        userSearch === jb
+     
+        
     });
-}); 
-    // Using code from playlist find some way to change the results of each card
+    console.log(review = "this \u2605 symbol");
+    
+});
