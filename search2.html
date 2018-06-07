@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Cravings </title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="script.js" async></script>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link type="text/css" rel="stylesheet" href="style.css">
+      <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+      <meta charset="utf-8">
+      <div class="container">
+        <div id="OurNav"></div>
+        <br>
+        <div class="container" id="divSearchBar">
+          <form id="location-form"> 
+          <input class="SearchBar" id="CRAVINGS" type="text" placeholder="What are you craving?"> 
+          <input class="SearchBar" id="LOCATION" type="text" placeholder="Your location"> 
+          <button type ="submit" class="cssButton"> Go</button>
+          </form>
+          
+        </div> 
+      </div>
+      <br>
+      <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+          height: 95%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+          height: 80%;
+          margin: 10px;
+          padding: 0;
+        }
+      </style>
+    </head>
+    <body>
+    <div id="map"></div>
+      <script>
+        
+        var getForminfo= document.getElementById('location-form');
+        getForminfo.addEventListener('submit', geocode);
+        
+        
+        function initMap(){
+          var details = {
+            zoom: 15,
+            center: {lat: 40.730209, lng: -73.983722},
+          }
+          var map = new
+          google.maps.Map(document.getElementById('map'),details);
+          
+              
+          var marker = new google.maps.Marker({
+            position: {lat: 40.730209, lng: -73.983722},
+            map:map,
+          });
+          
+        }
+         initMap();
+         
+      </script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEvr7QtiXWZ5eV3EWoiFORFhIYRkUOVy0&libraries=places&callback=initMap"></script> 
+    </body>
+</html>

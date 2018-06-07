@@ -12,37 +12,45 @@
       <div class="container">
         <div id="OurNav"></div>
         <br>
-        <div id="searchBar">
-          <input id="cssSearchBar"> <button id="cssButton">></button> 
+       <div class="container" id="divSearchBar">
+          <form id="location-form"> 
+          <input class="SearchBar" id="CRAVINGS" type="text" placeholder="What are you craving?"> 
+          <input class="SearchBar" id="LOCATION" type="text" placeholder="Your location"> 
+          <button type ="submit" class="cssButton"> Go</button>
+          </form>
+          
         </div> 
       </div>
       <br>
       <style>
-        /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
         #map {
           height: 100%;
         }
-        /* Optional: Makes the sample page fill the window. */
         html, body {
           height: 80%;
           margin: 20px;
           padding: 0;
         }
       </style>
+    </head>
+    <body>
       <script>
         function initMap() {
-          var map = new google.maps.Map(document.getElementById('map'), {
+          var details = {
+            zoom: 14,
             center: {lat: 40.730209, lng: -73.983722},
-            zoom: 15
-          });
+          };
+          var map = new
+          google.maps.Map(document.getElementById('map'),details);
+  
   
           var infowindow = new google.maps.InfoWindow();
           var service = new google.maps.places.PlacesService(map);
   
           service.getDetails({
             placeId: 'ChIJC2z1451ZwokRdm70SHTgRD0'
-          }, function(place, status) {
+          }, 
+          function(place, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
               var marker = new google.maps.Marker({
                 map: map,
@@ -56,11 +64,12 @@
               });
             }
           });
-          service = new google.maps.places.PlacesService(map);
+          service = new google.maps.places.PlacesService(map);          
+          
           service.textSearch(request, callback);
           // Perform a nearby search.
           service.nearbySearch(
-            {location: pyrmont, radius: 500, type: ['store']},
+            {location: pyrmont, radius: 500, type: ['restaraunt']},
             function(results, status, pagination) {
               if (status !== 'OK') return;
               createMarkers(results);
@@ -70,16 +79,8 @@
               };
           });
         }
-        function createPhotoMarker(place) {
-          var photos = place.photos;
-          if (!photos) {
-            return;
-          }
-        }
         initMap();
       </script>
-    </head>
-    <body>
       <div id="map"></div>
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEvr7QtiXWZ5eV3EWoiFORFhIYRkUOVy0&libraries=places&callback=initMap">
       </script>
